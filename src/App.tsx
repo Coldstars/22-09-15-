@@ -2,6 +2,10 @@ import React from "react";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import "./index.scss";
+import "./helper.scss";
+require("./icons/money.svg");
+require("./icons/note.svg");
+require("./icons/statistic.svg");
 
 const AppView = styled.div`
   height: 100vh;
@@ -21,8 +25,11 @@ const Nav = styled.div`
     > li {
       flex: 1;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      > svg {
+      }
     }
   }
 `;
@@ -39,13 +46,22 @@ function App() {
           <Nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <svg className="icon">
+                  <use xlinkHref="#note" />
+                </svg>
+                <Link to="/About">标签</Link>
               </li>
               <li>
-                <Link to="/About">About</Link>
+                <svg className="icon">
+                  <use xlinkHref="#money" />
+                </svg>
+                <Link to="/">记账</Link>
               </li>
               <li>
-                <Link to="/Users">Users</Link>
+                <svg className="icon">
+                  <use xlinkHref="#statistic" />
+                </svg>
+                <Link to="/Users">统计</Link>
               </li>
             </ul>
           </Nav>

@@ -1,4 +1,5 @@
 @import-normalize; //保证页面在不同浏览器上默认样式相近
+@import "./helper.scss";
 
 * {
     margin: 0;
@@ -26,4 +27,11 @@ a {
     text-decoration: none;
     color: inherit;
 
+}
+
+.icon {
+    width: 2em;
+    height: 2em;
+    fill: $icon-01;
+    margin-bottom: 2px;
 }
